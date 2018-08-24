@@ -37,10 +37,9 @@ namespace myApp
 		} 
 
 		public abstract int Area(); 
-		public abstract A Clone(); 
 	} 
 
-	public class B  : A 
+	public class B  : A , ICloneable 
 	{ 
 		public override int Area() 
 		{ 
@@ -52,7 +51,7 @@ namespace myApp
 			Console.WriteLine($"x = {X}, y = {Y}");
 		} 
 
-		public override A Clone() 
+		public object Clone() 
 		{ 
 			return (B) this.MemberwiseClone(); 
 		}
@@ -84,20 +83,30 @@ namespace myApp
 
 			a.X = x; 
 			a.Y = y; 
+			a.Area(); 
 
 			((B)a).Print();  // Down cast 
 			
 	
-			B b = (B)a; // deep copy 
-			// b.Clone(); 
+			// B b = (B)a; // deep copy 
+
+			B b = new B(); 
 			
 			Console.WriteLine("Before change:" ); 	
+			b.X = 100; 
+			b.Y = 200; 
 			b.Print(); 
+
 			
-			a.X = 34; 
-			a.Y = 43; 
+			Console.WriteLine(b.GetType()); 
+
+			B c = (B)b.Clone(); // shallow copy 
+
+			c.X = 10; 
+			c.Y = 20; 
 
 			Console.WriteLine("After change:" ); 	
+			c.Print(); 
 			b.Print(); 
 		
         }
