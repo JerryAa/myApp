@@ -88,7 +88,6 @@ namespace myApp
 			((B)a).Print();  // Down cast 
 			
 	
-			// B b = (B)a; // deep copy 
 
 			B b = new B(); 
 			
@@ -100,14 +99,15 @@ namespace myApp
 			
 			Console.WriteLine(b.GetType()); 
 
-			B c = (B)b.Clone(); // shallow copy 
+			// B c = (B)b.Clone(); // shallow copy 
+			// B c = (B)a; // deep copy 
 
 			c.X = 10; 
 			c.Y = 20; 
 
 			Console.WriteLine("After change:" ); 	
 			c.Print(); 
-			b.Print(); 
+			// ((B)a).Print();  // Down cast 
 		
         }
     }
