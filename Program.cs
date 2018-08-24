@@ -73,15 +73,14 @@ namespace myApp
 		
 			try { 
 				Console.WriteLine("Enter value for x: "); 
-				x = Console.ReadLine(); 
+				x = Convert.ToInt32(Console.ReadLine()); 
 				Console.WriteLine("Enter value for y: "); 
-				y = Console.ReadLine(); 
+				y = Convert.ToInt32(Console.ReadLine()); 
 				
 			} 
 			catch (Exception e) { 
 				Console.WriteLine(e.Message); 
 			} 
-<<<<<<< HEAD
 
 			a.X = x; 
 			a.Y = y; 
@@ -90,8 +89,6 @@ namespace myApp
 			
 	
 			B b = (B)a; 
-=======
->>>>>>> parent of f26e5cb... Ask user input
 		
         }
     }
