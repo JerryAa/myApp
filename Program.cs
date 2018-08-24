@@ -2,11 +2,97 @@
 
 namespace myApp
 {
+	public abstract class A 
+	{ 
+		private int _x; 
+		private int _y; 
+		
+		public int X
+		{ 
+			get{ 
+				return _x; 
+			} 
+			
+			set { 
+
+				if (value < 0 ) { 
+					throw new Exception ("Value is less than 0"); 
+				} 
+				else { 
+					_x = value; 
+				} 
+			} 
+		} 
+
+		public int Y 
+		{ 
+			get { 
+				return _y; 
+			} 
+			set { 
+				if (value <  0) throw new Exception("Value is less than 0");				  else { 
+					_y = value; 
+				} 
+			} 
+		} 
+
+		public abstract int Area(); 
+		public abstract A Clone(); 
+	} 
+
+	public class B  : A 
+	{ 
+		public override int Area() 
+		{ 
+			return X * Y; 
+		}	
+
+		public void Print() 
+		{ 
+			Console.WriteLine($"x = {X}, y = {Y}");
+		} 
+
+		public override A Clone() 
+		{ 
+			return (B) this.MemberwiseClone(); 
+		}
+
+	} 
+
+	public class C : B 
+	{ 
+
+	} 
+
     class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+			A a = new B(); 
+			int x = 0, y = 0; 
+		
+			try { 
+				Console.WriteLine("Enter value for x: "); 
+				x = Console.ReadLine(); 
+				Console.WriteLine("Enter value for y: "); 
+				y = Console.ReadLine(); 
+				
+			} 
+			catch (Exception e) { 
+				Console.WriteLine(e.Message); 
+			} 
+<<<<<<< HEAD
+
+			a.X = x; 
+			a.Y = y; 
+
+			((B)a).Print();  // Down cast 
+			
+	
+			B b = (B)a; 
+=======
+>>>>>>> parent of f26e5cb... Ask user input
+		
         }
     }
 }
