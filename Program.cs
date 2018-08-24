@@ -88,7 +88,17 @@ namespace myApp
 			((B)a).Print();  // Down cast 
 			
 	
-			B b = (B)a; 
+			B b = (B)a; // deep copy 
+			// b.Clone(); 
+			
+			Console.WriteLine("Before change:" ); 	
+			b.Print(); 
+			
+			a.X = 34; 
+			a.Y = 43; 
+
+			Console.WriteLine("After change:" ); 	
+			b.Print(); 
 		
         }
     }
