@@ -7,7 +7,7 @@ namespace myApp
 	{	
 
 
-		private int [] arr = new int[10]; 
+		public int [] arr = new int[10]; 
 
 		public void Run() 
 		{ 
