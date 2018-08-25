@@ -111,8 +111,20 @@ namespace myApp
 			// ((B)a).Print();  // Down cast 
 			**/ 
 		
+			Random rnd = new Random(); 
 			D d = new D(); 
 			d.Run(); 
+
+			for(int i = 0; i < 3; i++)
+			{					
+				d[i] = rnd.Next(1, 10000);  
+			} 
+
+			Console.WriteLine("Printing arr elements ...."); 
+			for(int i = 0 ; i < 3; i++) 
+			{ 
+				Console.WriteLine(d[i]); 
+			} 
         }
     }
 }
