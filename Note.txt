@@ -1,0 +1,3 @@
+
+Since different Files share the same namespace, there's no need 
+to complie the projects separately just Instantiate the class,etc 
