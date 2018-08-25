@@ -1,4 +1,5 @@
 ﻿using System;
+using myApp.D;  
 
 namespace myApp
 {
@@ -99,6 +100,7 @@ namespace myApp
 			
 			Console.WriteLine(b.GetType()); 
 
+			/** 
 			// B c = (B)b.Clone(); // shallow copy 
 			// B c = (B)a; // deep copy 
 
@@ -108,6 +110,7 @@ namespace myApp
 			Console.WriteLine("After change:" ); 	
 			c.Print(); 
 			// ((B)a).Print();  // Down cast 
+			**/ 
 		
         }
     }
