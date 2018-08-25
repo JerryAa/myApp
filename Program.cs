@@ -1,5 +1,4 @@
 ﻿using System;
-using myApp.D;  
 
 namespace myApp
 {
@@ -112,6 +111,8 @@ namespace myApp
 			// ((B)a).Print();  // Down cast 
 			**/ 
 		
+			D d = new D(); 
+			d.Run(); 
         }
     }
 }
